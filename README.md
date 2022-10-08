@@ -1,7 +1,7 @@
 # webshell_bypass
 webshell动态免杀工具由作者花了两天时间用php语言开发的带ui的免杀工具，使用者可上传由冰蝎或者天蝎生成的webshell，动态自动生成免杀webshell。目前只支持php、jsp，其它语言，各位使用者可自己去编写脚本实现。
-实现语言：php5.6.7+mysql
-后台管理：/admin（admin/a123456@）
+实现语言：php5.6.7+mysql+nginx。
+后台管理：/admin（admin/a123456@）。
 搭建简单易懂。
 功能：
 1、用户免杀shell生成次数限制（后台配置）。
@@ -9,7 +9,6 @@ webshell动态免杀工具由作者花了两天时间用php语言开发的带ui�
 3、jsp动态免杀。
 4、.net免杀内部使用。
 5、免杀记录自动删除。
-由于后台框架也用了开源的，部份后台功能没有做修改。
 1、前台登录：
 ![image](https://user-images.githubusercontent.com/115332332/194687809-8eca79f2-c343-4135-aaea-7f28c7f627ba.png)
 2、首页：
