@@ -4,10 +4,10 @@ webshell动态免杀工具由作者花了两天时间用php语言开发的带ui�
 后台管理：/admin（admin/a123456@）。  
 搭建简单易懂。  
 功能：  
-1、用户免杀shell生成次数限制（后台配置）。  
+1、授权功能，用户免杀shell生成次数限制（后台配置）。  
 2、php动态免杀。  
 3、jsp动态免杀。  
-4、.net免杀内部使用。  
+4、.net免杀仅内部使用。  
 5、免杀记录自动删除。  
 1、前台登录：
 ![image](https://user-images.githubusercontent.com/115332332/194687809-8eca79f2-c343-4135-aaea-7f28c7f627ba.png)
