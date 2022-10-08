@@ -1,0 +1,2 @@
+# webshell_bypass
+webshell动态免杀工具由php语言开发的带ui的免杀工具，使用者可上传由冰蝎或者天蝎生成的webshell，动态自动生成免杀后的webshell。目前只支持php、jsp，其它语言，各位使用者可自己去编写脚本实现。
