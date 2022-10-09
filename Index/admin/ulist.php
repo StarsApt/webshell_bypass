@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 /**
- * 代理管理
+ * 管理
 **/
 include("../includes/common.php");
 $title='用户管理';
@@ -117,7 +117,7 @@ elseif($my=='edit')
 $id=intval($_GET['id']);
 $row=$DB->get_row("select * from moyu_daili where id='$id' limit 1");
 echo '<div class="panel panel-primary">
-<div class="panel-heading"><h3 class="panel-title">修改代理用户信息</h3></div>';
+<div class="panel-heading"><h3 class="panel-title">修改用户信息</h3></div>';
 echo '<div class="panel-body">';
 echo '<form action="./ulist.php?my=edit_submit&id='.$id.'" method="POST">
 <div class="input-group">
@@ -151,7 +151,7 @@ echo'</select>
 </div><br/>
 
 <input type="submit" class="btn btn-primary btn-block" value="确定修改"></form>';
-echo '<br/><a href="./ulist.php">>>返回代理列表</a>';
+echo '<br/><a href="./ulist.php">>>返回列表</a>';
 echo '</div></div>';
 }
 elseif($my=='add_submit')
@@ -206,7 +206,7 @@ $id=intval($_GET['id']);
 $sql="alter table `moyu_daili` AUTO_INCREMENT=1";
 $DB->query("DELETE FROM moyu_daili WHERE id='$id'");
 if($DB->query($sql))
-showmsg('删除成功！<br/><br/><a href="./ulist.php">>>返回代理列表</a>',1);
+showmsg('删除成功！<br/><br/><a href="./ulist.php">>>返回列表</a>',1);
 else
 showmsg('删除失败！'.$DB->error(),4);
 }
@@ -221,7 +221,7 @@ $sql = " user='{$_GET['kw']}' or qq='{$_GET['kw']}'";
 }else{
 $sql = " 1";
 }
-$con='系统共有 <b>'.$numrows.'</b> 个代理用户<br/><a href="./ulist.php?my=add" class="btn btn-primary">添加用户</a>&nbsp;<a href="#" data-toggle="modal" data-target="#search" id="search" class="btn btn-success">搜索</a>';
+$con='系统共有 <b>'.$numrows.'</b> 个用户<br/><a href="./ulist.php?my=add" class="btn btn-primary">添加用户</a>&nbsp;<a href="#" data-toggle="modal" data-target="#search" id="search" class="btn btn-success">搜索</a>';
 
 echo '<div class="alert alert-info">';
 echo $con;
@@ -251,7 +251,7 @@ $rs=$DB->query("SELECT * FROM moyu_daili WHERE{$sql} order by id desc limit $off
 while($res = $DB->fetch($rs))
 {
 if($res['active']==0){$q="封禁";}elseif($res['active']==1){$q="正常";}
-echo '<tr><td><b>'.$res['id'].'</b></td><td>'.htmlentities($res['user']).'</td><td><a href="tencent://message/?uin='.$res['qq'].'&amp;Site=qq&amp;Menu=yes">'.$res['qq'].'</a></td><td>'.$res['last'].'</td><td>'.$res['rmb'].'</td><td>'.$q.'</td><td><a href="./ulist.php?my=edit&id='.$res['id'].'" class="btn btn-info btn-xs">编辑</a>&nbsp;<a href="javascript:showRecharge('.$res['id'].')"class="btn btn-success btn-xs">授权修改</a>&nbsp;</a>&nbsp;<a href="./ulist.php?my=delete&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要删除此代理用户吗？\');">删除</a></td></tr>';
+echo '<tr><td><b>'.$res['id'].'</b></td><td>'.htmlentities($res['user']).'</td><td><a href="tencent://message/?uin='.$res['qq'].'&amp;Site=qq&amp;Menu=yes">'.$res['qq'].'</a></td><td>'.$res['last'].'</td><td>'.$res['rmb'].'</td><td>'.$q.'</td><td><a href="./ulist.php?my=edit&id='.$res['id'].'" class="btn btn-info btn-xs">编辑</a>&nbsp;<a href="javascript:showRecharge('.$res['id'].')"class="btn btn-success btn-xs">授权修改</a>&nbsp;</a>&nbsp;<a href="./ulist.php?my=delete&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要删除此用户吗？\');">删除</a></td></tr>';
 }
 ?>
 </tbody>
