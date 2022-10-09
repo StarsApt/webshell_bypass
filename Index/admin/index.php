@@ -1,10 +1,6 @@
 <?php
 error_reporting(0);
-/*
-陌屿<2763994904@qq.com>
-陌屿代码加密系统
-QQ群：42103442
-*/
+
 include("../includes/common.php");
 $title='后台管理';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
