@@ -16,7 +16,7 @@ webshell动态免杀工具由作者花了两天时间用php语言开发的带ui�
 3、php webshell免杀：
 ![image](https://user-images.githubusercontent.com/115332332/194688014-e28f3d1c-4e7c-49a8-9048-96d53f660ed8.png)
 4、jsp webshell免杀：
-![image](https://user-images.githubusercontent.com/115332332/194688039-901e0940-e030-4e75-8eaa-9acbda58eb11.png)
+![image](https://user-images.githubusercontent.com/115332332/194738693-81f5cdb9-83c5-4874-baa7-8a5481d41191.png)
 .net（仅内部使用）各位可以自行编写脚本。
 5、免杀记录：
 ![image](https://user-images.githubusercontent.com/115332332/194697546-1dd14373-0a71-44fc-9fd2-ae5d9db2e2d9.png)
