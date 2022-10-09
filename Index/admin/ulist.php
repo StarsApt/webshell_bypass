@@ -85,7 +85,7 @@ $my=isset($_GET['my'])?$_GET['my']:null;
 if($my=='add')
 {
 echo '<div class="panel panel-primary">
-<div class="panel-heading"><h3 class="panel-title">添加代理用户</h3></div>';
+<div class="panel-heading"><h3 class="panel-title">添加用户</h3></div>';
 echo '<div class="panel-body">';
 echo '<form action="./ulist.php?my=add_submit" method="POST">
 <div class="input-group">
@@ -109,7 +109,7 @@ echo '<form action="./ulist.php?my=add_submit" method="POST">
 </div><br/>
 
 <input type="submit" class="btn btn-primary btn-block" value="确定添加"></form>';
-echo '<br/><a href="./ulist.php">>>返回代理列表</a>';
+echo '<br/><a href="./ulist.php">>>返回用户列表</a>';
 echo '</div></div>';
 }
 elseif($my=='edit')
