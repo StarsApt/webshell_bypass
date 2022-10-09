@@ -66,7 +66,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 									<option value="1">扣除</option>
 								</select>
 							</span>
-							<input type="number" class="form-control" name="rmb" placeholder="输入金额">
+							<input type="number" class="form-control" name="rmb" placeholder="输入次数">
 							<span class="input-group-addon">次</span>
 						</div>
 					</div>
@@ -304,7 +304,7 @@ $(document).ready(function(){
 		var id=$("input[name='id']").val();
 		var actdo=$("select[name='do']").val();
 		var rmb=$("input[name='rmb']").val();
-		if(rmb==''){layer.alert('请输入金额');return false;}
+		if(rmb==''){layer.alert('请输入次数');return false;}
 		var ii = layer.load(2, {shade:[0.1,'#fff']});
 		$.ajax({
 			type : "POST",

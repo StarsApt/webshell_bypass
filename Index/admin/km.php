@@ -65,7 +65,7 @@ echo "<script type='text/javascript'>layer.alert('添加成功！',{icon:6,close
 <div class="layui-form-item">
 <label class="layui-form-label">生成金额</label>
 <div class="layui-input-block">
-<input type="text" name="money" value="<?=@$_POST['money']?>" autocomplete="off"  placeholder="请输入金额" class="layui-input">
+<input type="text" name="money" value="<?=@$_POST['money']?>" autocomplete="off"  placeholder="请输入次数" class="layui-input">
 </div>
 </div>
 <div class="layui-form-item">

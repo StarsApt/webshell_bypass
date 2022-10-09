@@ -165,14 +165,7 @@ echo'
 </div>
 </div>
 ';
-echo'
-<div class="layui-form-item">
-<label class="layui-form-label">找源码解密价格</label>
-<div class="layui-input-block">
-<input type="text" name="zym" value="'.$conf['zym'].'" class="layui-input">
-</div>
-</div>
-';
+
 echo'
 <div class="layui-form-item">
 <label class="layui-form-label">上传文件限制大小（KB）</label>
