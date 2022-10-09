@@ -41,14 +41,6 @@ $count3=$DB->count("SELECT count(*) from moyu_daili WHERE 1");
                     </script>
                  </td>
                 </tr>
-                <tr>
-                  <td>卡密总数</td>
-                  <td>
-                    <script type="text/html" template>
-                       <?php echo $count2?>
-                    </script>
-                 </td>
-                </tr>
                 <tr>				
                   <td>您的Q Q</td>
                   <td>

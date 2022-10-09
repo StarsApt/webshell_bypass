@@ -2,7 +2,7 @@
 error_reporting(0);
 
 include("../includes/common.php");
-$title='威盾加密';
+$title='PHP加密';
 if($islogins==1){}else exit("<script language='javascript'>window.location.href='../login.php';</script>");
 
 ?>
@@ -46,7 +46,7 @@ $file=$_FILES['file']['name']; //获取上传文件名
 $time=date("Y-m-d H:i:s"); //获取当前时间
 $space=md5($owner.$file.time()); //定义缓存目录名
 if (!is_dir($app.'/includes/download/'.$space.'/')) mkdir($app.'/includes/download/'.$space.'/'); //创建缓存目录
-$cache=$DB->query("INSERT INTO `moyu_cache` (`owner`, `file`, `space`, `type`, `upload`) VALUES ('{$owner}', '{$file}', '{$space}', '威盾加密', '{$time}')"); //写入数据表
+$cache=$DB->query("INSERT INTO `moyu_cache` (`owner`, `file`, `space`, `type`, `upload`) VALUES ('{$owner}', '{$file}', '{$space}', 'PHP加密', '{$time}')"); //写入数据表
 copy($_FILES['file']['tmp_name'],$app.'/includes/download/'.$space.'/'.$file.".txt"); //将上传文件保存到缓存目录
 if($_POST['url']!=""){file_put_contents(ROOT.'/includes/download/'.$space.'/'.$file.".txt",str_replace('<?php','<?php header("Content-type:text/html;charset=utf-8"); if($_SERVER["HTTP_HOST"]!=\''.$_POST['url'].'\'){echo\''.$_POST['content'].'\';exit();}',file_get_contents(ROOT.'/includes/download/'.$space.'/'.$file.".txt"))); }
 //加密缓存结束
@@ -86,7 +86,7 @@ echo "<script type='text/javascript'>layer.msg('您的余额不足无法加密�
 <div class="tab-pane active" id="sajm">
 <form action="vipjm.php" method="POST"  enctype="multipart/form-data"  class="form-horizontal layui-form" role="form" >						 
 <blockquote class="layui-elem-quote">双层加密比较特殊，运行版本支持5.6。<a rel="nofollow" href="tencent://message/?uin=<?php echo $conf["kfqq"] ?>&amp;Menu=yes" >QQ<?php echo $conf["kfqq"] ?> </a>
-<br/><a target="_blank"  style="color:red">( 注意威盾加密只支持5.6 ) </a></blockquote>
+<br/><a target="_blank"  style="color:red">( 注意PHP加密只支持5.6 ) </a></blockquote>
 <div class="layui-form-item">
 <label class="layui-form-label">版本选择</label>
 <div class="layui-input-block">
@@ -138,7 +138,7 @@ echo "<script type='text/javascript'>layer.msg('您的余额不足无法加密�
 </div>
 </form>
 <blockquote class="layui-elem-quote layui-quote-nm">
-温馨提醒：威盾加密是双层加密有一些文件不支持，遇到不支持就用其他加密。
+温馨提醒：PHP加密是双层加密有一些文件不支持，遇到不支持就用其他加密。
 </blockquote>
 </div>
 </div>

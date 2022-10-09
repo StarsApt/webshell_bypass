@@ -4,7 +4,7 @@ error_reporting(0);
  * 代理管理
 **/
 include("../includes/common.php");
-$title='代理管理';
+$title='用户管理';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 ?>
@@ -32,7 +32,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-<h4 class="modal-title" id="myModalLabel">搜索代理</h4>
+<h4 class="modal-title" id="myModalLabel">搜索用户</h4>
 </div>
 <div class="modal-body">
 <form action="ulist.php" method="GET">
@@ -52,7 +52,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title">余额充值</h4>
+				<h4 class="modal-title">生成次数修改</h4>
 			</div>
 			<div class="modal-body">
 				<form id="form-rmb">
@@ -62,12 +62,12 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 							<span class="input-group-addon p-0">
 								<select name="do"
 										style="-webkit-border-radius: 0;height:20px;border: 0;outline: none !important;border-radius: 5px 0 0 5px;padding: 0 5px 0 5px;">
-									<option value="0">充值</option>
+									<option value="0">增加</option>
 									<option value="1">扣除</option>
 								</select>
 							</span>
 							<input type="number" class="form-control" name="rmb" placeholder="输入金额">
-							<span class="input-group-addon">元</span>
+							<span class="input-group-addon">次</span>
 						</div>
 					</div>
 				</form>
@@ -89,12 +89,12 @@ echo '<div class="panel panel-primary">
 echo '<div class="panel-body">';
 echo '<form action="./ulist.php?my=add_submit" method="POST">
 <div class="input-group">
-<span class="input-group-addon">代理账号</span>
+<span class="input-group-addon">用户账号</span>
 <input type="text" class="form-control" name="user" value="" required>
 </div><br/>
 
 <div class="input-group">
-<span class="input-group-addon">代理密码</span>
+<span class="input-group-addon">用户密码</span>
 <input type="text" class="form-control" name="pwd" value="" required>
 </div><br/>
 
@@ -121,12 +121,12 @@ echo '<div class="panel panel-primary">
 echo '<div class="panel-body">';
 echo '<form action="./ulist.php?my=edit_submit&id='.$id.'" method="POST">
 <div class="input-group">
-<span class="input-group-addon">代理账号</span>
+<span class="input-group-addon">用户账号</span>
 <input type="text" class="form-control" name="user" value="'.htmlentities($row['user']).'" required>
 </div><br/>
 
 <div class="input-group">
-<span class="input-group-addon">代理密码</span>
+<span class="input-group-addon">用户密码</span>
 <input type="text" class="form-control" name="pwd" value="'.htmlentities($row['pass']).'" required>
 </div><br/>
 
@@ -230,7 +230,7 @@ echo '</div>';
 ?>
 <div class="table-responsive">
 <table class="table table-striped">
-<thead><tr><th>id</th><th>用户名</th><th>QQ</th><th>上次登录</th><th>账户余额</th><th>状态</th><th>操作</th></tr></thead>
+<thead><tr><th>id</th><th>用户名</th><th>QQ</th><th>上次登录</th><th>剩余次数</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
 <?php
 $pagesize=30;
@@ -251,7 +251,7 @@ $rs=$DB->query("SELECT * FROM moyu_daili WHERE{$sql} order by id desc limit $off
 while($res = $DB->fetch($rs))
 {
 if($res['active']==0){$q="封禁";}elseif($res['active']==1){$q="正常";}
-echo '<tr><td><b>'.$res['id'].'</b></td><td>'.htmlentities($res['user']).'</td><td><a href="tencent://message/?uin='.$res['qq'].'&amp;Site=qq&amp;Menu=yes">'.$res['qq'].'</a></td><td>'.$res['last'].'</td><td>'.$res['rmb'].'</td><td>'.$q.'</td><td><a href="./ulist.php?my=edit&id='.$res['id'].'" class="btn btn-info btn-xs">编辑</a>&nbsp;<a href="javascript:showRecharge('.$res['id'].')"class="btn btn-success btn-xs">余额修改</a>&nbsp;</a>&nbsp;<a href="./ulist.php?my=delete&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要删除此代理用户吗？\');">删除</a></td></tr>';
+echo '<tr><td><b>'.$res['id'].'</b></td><td>'.htmlentities($res['user']).'</td><td><a href="tencent://message/?uin='.$res['qq'].'&amp;Site=qq&amp;Menu=yes">'.$res['qq'].'</a></td><td>'.$res['last'].'</td><td>'.$res['rmb'].'</td><td>'.$q.'</td><td><a href="./ulist.php?my=edit&id='.$res['id'].'" class="btn btn-info btn-xs">编辑</a>&nbsp;<a href="javascript:showRecharge('.$res['id'].')"class="btn btn-success btn-xs">授权修改</a>&nbsp;</a>&nbsp;<a href="./ulist.php?my=delete&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要删除此代理用户吗？\');">删除</a></td></tr>';
 }
 ?>
 </tbody>
@@ -314,7 +314,7 @@ $(document).ready(function(){
 			success : function(data) {
 				layer.close(ii);
 				if(data.code == 0){
-					layer.msg('修改余额成功');
+					layer.msg('修改授权成功');
 					$('#modal-rmb').modal('hide');
 					listTable();
 				}else{

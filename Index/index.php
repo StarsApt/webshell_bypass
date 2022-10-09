@@ -110,7 +110,7 @@ if($islogins==1){}else exit("<script language='javascript'>window.location.href=
                 <cite>PHP免杀管理</cite>
               </a>
               <dl class="layui-nav-child">
-                    <!-- <dd><a lay-href="User/vipjm.php">威盾加密</a></dd>
+                    <!-- <dd><a lay-href="User/vipjm.php">PHP加密</a></dd>
                     <dd><a lay-href="User/phpjm.php">混淆加密</a></dd> -->
                     <dd><a lay-href="User/enphp.php">免杀方式1</a></dd>
                     <!-- <dd><a lay-href="User/decipher.php">找源码解密</a></dd> -->
@@ -122,7 +122,7 @@ if($islogins==1){}else exit("<script language='javascript'>window.location.href=
                 <cite>JSP免杀管理</cite>
               </a>
               <dl class="layui-nav-child">
-                    <!-- <dd><a lay-href="User/vipjm.php">威盾加密</a></dd>
+                    <!-- <dd><a lay-href="User/vipjm.php">PHP加密</a></dd>
                     <dd><a lay-href="User/phpjm.php">混淆加密</a></dd> -->
                     <dd><a lay-href="User/enjsp.php">免杀方式1</a></dd>
                     <!-- <dd><a lay-href="User/decipher.php">找源码解密</a></dd> -->
@@ -134,7 +134,7 @@ if($islogins==1){}else exit("<script language='javascript'>window.location.href=
                 <cite>APSX免杀管理</cite>
               </a>
               <dl class="layui-nav-child">
-                    <!-- <dd><a lay-href="User/vipjm.php">威盾加密</a></dd>
+                    <!-- <dd><a lay-href="User/vipjm.php">PHP加密</a></dd>
                     <dd><a lay-href="User/phpjm.php">混淆加密</a></dd> -->
                     <dd><a lay-href="User/enaspx.php">免杀方式1</a></dd>
                     <!-- <dd><a lay-href="User/decipher.php">找源码解密</a></dd> -->

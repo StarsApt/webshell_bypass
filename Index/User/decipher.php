@@ -46,7 +46,7 @@ $file=$_FILES['file']['name'];
 $time=date("Y-m-d H:i:s");
 $space=md5($owner.$file.time());
 if (!is_dir($app.'/includes/download/'.$space.'/')) mkdir($app.'/includes/download/'.$space.'/'); //创建缓存目录
-$cache=$DB->query("INSERT INTO `moyu_cache` (`owner`, `file`, `space`, `type`, `upload`) VALUES ('{$owner}', '{$file}', '{$space}', '威盾加密', '{$time}')"); //写入数据表
+$cache=$DB->query("INSERT INTO `moyu_cache` (`owner`, `file`, `space`, `type`, `upload`) VALUES ('{$owner}', '{$file}', '{$space}', 'PHP加密', '{$time}')"); //写入数据表
 copy($_FILES['file']['tmp_name'],$app.'/includes/download/'.$space.'/'.$file.".txt"); //将上传文件保存到缓存目录
 //加载解密函数
 include_once './includes/function.php';

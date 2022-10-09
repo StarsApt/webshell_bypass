@@ -151,7 +151,7 @@ echo'
 ';
 echo'
 <div class="layui-form-item">
-<label class="layui-form-label">威盾加密价格</label>
+<label class="layui-form-label">PHP加密价格</label>
 <div class="layui-input-block">
 <input type="text" name="wd" value="'.$conf['wd'].'" class="layui-input">
 </div>

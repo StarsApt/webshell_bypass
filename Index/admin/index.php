@@ -108,13 +108,7 @@ return;
                 <i class="layui-icon layui-icon-home"></i>
                 <cite>主页</cite>
               </a>
-              <dl class="layui-nav-child">
-                <dd>
-                    <dd><a lay-href="view.php">首页</a></dd>
-                    <dd><a lay-href="http://auth.thejm.design/">正版查询</a></dd>
-                  </dl>
-                </dd>
-              </dl>
+             
             </li>
             <li data-name="template" class="layui-nav-item">
               <a href="javascript:;" lay-tips="用户管理" lay-direction="2">
@@ -125,20 +119,7 @@ return;
                     <dd><a lay-href="ulist.php">用户管理</a></dd>
               </dl>
             </li>
-            <li data-name="user" class="layui-nav-item">
-              <a href="javascript:;" lay-tips="卡密管理" lay-direction="2">
-                <i class="layui-icon layui-icon-user"></i>
-                <cite>卡密管理</cite>
-              </a>
-              <dl class="layui-nav-child">
-                <dd>
-                  <a lay-href="km.php">生成卡密</a>
-                </dd>
-                <dd>
-                  <a lay-href="kmlist.php">卡密列表</a>
-                </dd>
-              </dl>
-            </li>
+            
             <li data-name="set" class="layui-nav-item">
               <a href="javascript:;" lay-tips="网站信息" lay-direction="2">
                 <i class="layui-icon layui-icon-set"></i>
@@ -146,10 +127,10 @@ return;
               </a>
               <dl class="layui-nav-child">
                     <dd><a lay-href="set.php?mod=site">网站设置</a></dd>
-                    <dd><a lay-href="set.php?mod=jiage">加密价格</a></dd>			
-                    <dd><a lay-href="order.php">支付记录</a></dd>		
-                    <dd><a lay-href="pay.php?mod=pay">支付设置</a></dd>
-                    <dd><a lay-href="update.php">在线更新</a></dd>
+                    <dd><a lay-href="set.php?mod=jiage">免杀价格</a></dd>			
+                    	
+                    
+                    
                   </dl>
                 </dd>
               </dl>
